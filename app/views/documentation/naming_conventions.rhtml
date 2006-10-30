@@ -1,0 +1,30 @@
+<h1>ActiveWarehouse Naming Conventions</h1>
+
+<p>ActiveWarehouse uses naming conventions which are similar to Rails, but which at times match common data warehouse practices rather than the actual Rails conventions.</p>
+
+<h2>Facts</h2></dt>
+
+<p>Facts use the fact name followed by the word "fact". The table name for facts is pluralized just like Rails likes it.
+  <ul>
+    <li>Class name: <i>Name</i>Fact</li>
+    <li>Table name: <i>name</i>_facts</li>
+  </ul>
+</p>
+<p>
+  Example: <code>script/generate fact sales</code> results in the following:
+  <ul>
+    <li>SalesFact class</li>
+    <li>sales_facts table</li>
+  </ul>
+</p>
+<p>
+  Foreign key references to dimensions use the same naming scheme as Rails. For example, to reference a Time dimension the foreign key time_id would be used.
+</p>
+  
+<h2>Dimensions</h2>
+
+<p>Dimensions use the dimension name followed by the word "dimension". The table name for dimensions is <b>NOT</b> pluralized. This differs from Rails conventions but more closely matches standard data warehouse conventions. The name can be overridden with "set_table_name".</p>
+
+<h2>Cubes</h2>
+
+<p></p>
