@@ -1,5 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first:
+20010101:
   id: 1
-another:
+  year: 2001
+  quarter: Q1
+  month: January
+  week: Week 1
+  day: 1
+20010102:
   id: 2
+  year: 2001
+  quarter: Q1
+  month: January
+  week: Week 1
+  day: 2
