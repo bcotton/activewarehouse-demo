@@ -1,0 +1,52 @@
+<h1>ActiveWarehouse Generators</h1>
+
+<p>ActiveWarehouse includes several generators which work very similar to the built in Rails generators for models.</p>
+
+<h2>Facts</h2></dt>
+
+<p>The Fact generator is used to create model and test stubs for data warehouse facts.</p>
+<p>
+  Example: <code>script/generate fact sales</code> results in the following:
+  <ul>
+    <li>SalesFact class</li>
+    <li>CreateSalesFacts migration</li>
+    <li>TestSalesFacts unit test</li>
+  </ul>
+</p>
+<p>The SalesFact class would look like:
+<pre>
+  class SalesFact &lt; ActiveWarehouse::Fact
+
+  end
+</pre>  
+</p>
+  
+<h2>Dimensions</h2>
+
+<p>The Dimension generator is used to create model and test stubs for data warehouse dimensions.</p>
+<p>
+  Example: <code>script/generate dimension date</code> results in the following:
+  <ul>
+    <li>DateDimension model</li>
+    <li>CreateDateDimension migration</li>
+    <li>TestDateDimension unit test</li>
+  </ul>
+</p>
+<p>The DateDimension class would look like:
+<pre>
+  class DateDimension &lt; ActiveWarehouse::Dimension
+     
+  end
+</pre>
+</p>
+
+<h2>Cubes</h2>
+
+<p>The Cube generator creates a Cube stub class.</p>
+<p>
+  Example: <code>script/generate cube RegionalSales</code> results in the following:
+  <ul>
+    <li>RegionalSalesCube class</li>
+    <li>TestRegionalSalesCube unit test</li>
+  </ul>
+</p>

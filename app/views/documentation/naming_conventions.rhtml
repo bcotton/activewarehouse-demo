@@ -24,7 +24,13 @@
 <h2>Dimensions</h2>
 
 <p>Dimensions use the dimension name followed by the word "dimension". The table name for dimensions is <b>NOT</b> pluralized. This differs from Rails conventions but more closely matches standard data warehouse conventions. The name can be overridden with "set_table_name".</p>
-
+<p>
+  Example: <code>script/generate dimension date</code> results in the following:
+  <ul>
+    <li>DateDimension class</li>
+    <li>date_dimension table</li>
+  </ul>
+</p>
 <h2>Cubes</h2>
 
 <p></p>
