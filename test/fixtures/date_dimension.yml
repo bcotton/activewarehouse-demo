@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 20010101:
   id: 1
-  year: 2001
-  quarter: Q1
-  month: January
-  week: Week 1
-  day: 1
+  calendar_year: 2001
+  calendar_quarter: Q1
+  calendar_month_name: January
+  calendar_week: Week 1
+  day_of_week: Monday
 20010102:
   id: 2
-  year: 2001
-  quarter: Q1
-  month: January
-  week: Week 1
-  day: 2
+  calendar_year: 2001
+  calendar_quarter: Q1
+  calendar_month_name: January
+  calendar_week: Week 1
+  day_of_week: Tuesday

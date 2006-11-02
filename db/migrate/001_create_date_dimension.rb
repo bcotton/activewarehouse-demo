@@ -13,6 +13,7 @@ class CreateDateDimension < ActiveRecord::Migration
       :day_number_in_fiscal_year => :integer,
       :last_day_in_week_indicator => :string,
       :last_day_in_month_indicator => :string,
+      :calendar_week => :string,
       :calendar_week_ending_date => :string,
       :calendar_week_number_in_year => :integer,
       :calendar_month_name => :string,

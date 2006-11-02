@@ -2,7 +2,12 @@
 
 require File.dirname(__FILE__) + '/../config/environment'
 
-RegionDimension.create(:name => 'North America', :country => 'United States')
-RegionDimension.create(:name => 'North America', :country => 'Canada')
-RegionDimension.create(:name => 'Central America', :country => 'Mexico')
-RegionDimension.create(:name => 'South America', :country => 'Peru')
+# Copied from rake task
+ddb = ActiveWarehouse::Builder::DateDimensionBuilder.new(Time.now.years_ago(5), Time.now) # TODO: start and end dates should be configurable?
+ddb.build.each do |record|
+  dd = DateDimension.new
+  record.each do |key,value|
+    dd.send("#{key}=".to_sym, value) if dd.respond_to?(key)
+  end
+  dd.save!
+end
