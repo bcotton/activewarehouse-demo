@@ -11,3 +11,5 @@ ddb.build.each do |record|
   end
   dd.save!
 end
+
+require 'setup/store'

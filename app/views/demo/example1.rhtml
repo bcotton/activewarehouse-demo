@@ -1,1 +1,6 @@
-<%= render_cube :regional_sales, :date, :store, :cy, :region %>
+<%= render_cube(
+  :name => :regional_sales, 
+  :column_dimension => :date, 
+  :row_dimension => :store, 
+  :column_hierarchy => :cy, 
+  :row_hierarchy => :region) %>
