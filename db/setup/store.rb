@@ -12,7 +12,8 @@ stores = [
   ['Store 7','Store 7','11 Broadway','New York','New York','New York','00101','John Smith','New York','Northeast','XXX','24 Hour','XXX', 10300, 12390, 1, 600]
 ]
 
-StoreDimension.delete_all
+connection = StoreDimension.connection
+connection.execute("TRUNCATE TABLE #{StoreDimension.table_name}")
 
 stores.each do |store|
   StoreDimension.create(

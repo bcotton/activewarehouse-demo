@@ -1,0 +1,11 @@
+# This will sum sales quantity and group by calendar year
+select d1.calendar_year, sum(f.sales_quantity) from pos_retail_sales_transaction_facts f join date_dimension d1 on f.date_id = d1.id group by d1.calendar_year;
+
+# This will sum sales quantity and group by store name
+select d2.store_name, sum(f.sales_quantity) from pos_retail_sales_transaction_facts f join store_dimension d2 on f.store_id = d2.id group by d2.store_name;
+
+# This will sum sales quantity and group by calendar year and store name
+select d1.calendar_year, d2.store_name, sum(f.sales_quantity) from pos_retail_sales_transaction_facts f join date_dimension d1 on f.date_id = d1.id join store_dimension d2 on f.store_id = d2.id group by d1.calendar_year, d2.store_name;
+
+# This will sum sales quantity and group by calendar year and store region
+select d1.calendar_year, d2.store_region, sum(f.sales_quantity) as sales_quantity from pos_retail_sales_transaction_facts f join date_dimension d1 on f.date_id = d1.id join store_dimension d2 on f.store_id = d2.id group by d1.calendar_year, d2.store_region;
