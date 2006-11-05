@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+$:.unshift(File.dirname(__FILE__))
+
 require File.dirname(__FILE__) + '/../config/environment'
 
 # Copied from rake task
@@ -13,3 +15,4 @@ ddb.build.each do |record|
 end
 
 require 'setup/store'
+require 'setup/pos_retail_sales_transaction'

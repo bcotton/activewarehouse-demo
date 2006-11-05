@@ -1,6 +1,12 @@
 <%= render_cube(
   :name => :regional_sales, 
-  :column_dimension => :date, 
-  :row_dimension => :store, 
+  :column_dimension => :date,
   :column_hierarchy => :cy, 
-  :row_hierarchy => :region) %>
+  :column_hierarchy_constraints => {
+    :calendar_year => ['2005','2006']
+  },
+  :row_dimension => :store, 
+  :row_hierarchy => :region,
+  :html_options => {
+    :report_class => 'report'
+  }) %>

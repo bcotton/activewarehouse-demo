@@ -186,3 +186,7 @@ list-style-type: none;
 #sidebar ul.links li {
 margin-bottom: 5px;
 }
+
+.report { background-color: #aaa; }
+.report th { background-color: #ddd; }
+.report td { background-color: #fff; }
