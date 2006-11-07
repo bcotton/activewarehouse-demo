@@ -1,0 +1,26 @@
+<h2>Facts</h2>
+
+<table class="report">
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Year-Quarter</th>
+    <th>Store Name</th>
+    <th>Store Region</th>
+    <th>Store District</th>
+    <th>Sales Quantity</th>
+    <th>Sales Dollar Amount</th>
+  </tr>
+<%  @facts.each do |fact| -%>
+  <tr>
+    <td><%= fact.id %></td>
+    <td><%= fact.date.date %></td>
+    <td><%= fact.date.calendar_year_quarter %></td>
+    <td><%= fact.store.store_name %></td>
+    <td><%= fact.store.store_region %></td>
+    <td><%= fact.store.store_district %></td>
+    <td><%= fact.sales_quantity %></td>
+    <td><%= fact.sales_dollar_amount %></td>
+  </tr>
+<%  end -%>
+</table>
