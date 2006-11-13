@@ -1,0 +1,14 @@
+<p>
+  <%= link_to 'Demo Home', :controller => 'demo' %>
+  <%= link_to 'Top of Report', :action => 'example2'%>
+</p>
+
+<%= render_cube(
+  :name => :regional_sales, 
+  :column_dimension => :date,
+  :column_hierarchy => :fy,
+  :row_dimension => :store, 
+  :row_hierarchy => :location,
+  :html_options => {
+    :report_class => 'report'
+  }) %>

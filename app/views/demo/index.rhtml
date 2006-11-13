@@ -7,14 +7,35 @@
   <h1>ActiveWarehouse Demo</h1>
 
   <p>This is a simple demo to show how ActiveWarehouse works.</p>
+  
   <ol>
     <li>
-      <h2>Example 1</h2>
-      <%= image_tag 'example1-erd.png', :alt => 'Example 1 ERD Diagram' %>
-      <p><%= link_to 'Example #1', :action => 'example1' %></p>
+      <h2><%= link_to 'Example #1', :action => 'example1' %></h2>
+      <p>Canned report pivoting on Store dimension on the Region hierarchy and Date Dimension on the Calendar Year hierarchy.</p>
+    </li>
+    <li>
+      <h2><%= link_to 'Example #2', :action => 'example2' %></h2>
+      <p>Canned report pivoting on Store dimension on the Location hierarchy and Date dimension on the Fiscal Year hierarchy.</p>
+    </li>
+    <li>
+      <h2><%= link_to 'Example #3', :action => 'example3' %></h2>
+      <p>Canned report pivoting on Production dimension and Date dimension on the Calendar Year hierarchy.</p>
+    </li>
+    <li>
+      <h2><%= link_to 'Example #4', :action => 'example4' %></h2>
+      <p>Dynamic pivot report.</p>
     </li>
     <li>
       <h2>Fact List</h2>
       <p><%= link_to 'Fact List', :action => 'fact_list' %></p>
+    </li>
+    <li>
+      <h2>Date Dimension</h2>
+      <p><%= link_to 'Date Dimension', :action => 'date_dimension' %></p>
+    </li>
   </ol>
+  
+  <p>ERD Diagram:</p>
+  <%= image_tag 'example1-erd.png', :alt => 'Example 1 ERD Diagram' %>
+  
 </div>
