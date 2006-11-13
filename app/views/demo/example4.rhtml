@@ -9,12 +9,13 @@
   <%= link_to 'Top of Report', :action => 'example4'%>
 </p>
 
-<%= render_cube(
-  :name => :product_sales, 
-  :column_dimension => @col_dimension,
-  :column_hierarchy => @col_hierarchy,
-  :row_dimension => @row_dimension, 
-  :row_hierarchy => @row_hierarchy,
+<%= render_cube(:product_sales, @col_dimension, @row_dimension,
+  :column => {
+    :hierarchy => @col_hierarchy
+  },
+  :row => {
+    :hierarchy => @row_hierarchy
+  },
   :fact_attributes => [:sales_quantity],
   :html_options => {
     :report_class => 'report'
@@ -24,4 +25,7 @@
     :ch => params[:ch],
     :rd => params[:rd],
     :rh => params[:rh]
+  }, 
+  :format => {
+    :gross_margin => Proc.new {|value| sprintf("%.2f", value) }
   }) %>

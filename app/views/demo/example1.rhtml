@@ -3,15 +3,19 @@
   <%= link_to 'Top of Report', :action => 'example1'%>
 </p>
 
-<%= render_cube(
-  :name => :regional_sales, 
-  :column_dimension => :date,
-  :column_hierarchy => :cy, 
-  :column_hierarchy_constraints => {
-    :calendar_year => ['2005','2006']
+<%= render_cube(:regional_sales, :date, :store, 
+  :column => {
+    :hierarchy => :cy,
+    :constraints => {
+      :calendar_year => ['2005','2006']
+    }
   },
-  :row_dimension => :store, 
-  :row_hierarchy => :region,
+  :row => {
+    :hierarchy => :region
+  },
   :html_options => {
     :report_class => 'report'
+  },
+  :format => {
+    :gross_margin => Proc.new {|value| sprintf("%.2f", value) }
   }) %>

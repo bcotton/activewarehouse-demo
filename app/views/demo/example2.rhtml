@@ -3,12 +3,18 @@
   <%= link_to 'Top of Report', :action => 'example2'%>
 </p>
 
-<%= render_cube(
-  :name => :regional_sales, 
-  :column_dimension => :date,
-  :column_hierarchy => :fy,
-  :row_dimension => :store, 
-  :row_hierarchy => :location,
+<%= render_cube(:regional_sales, :date, :store, 
+  :column => {
+    :dimension => :date,
+    :hierarchy => :fy
+  },
+  :row => {
+    :dimension => :store, 
+    :hierarchy => :location
+  },
   :html_options => {
     :report_class => 'report'
+  },
+  :format => {
+    :gross_margin => Proc.new {|value| sprintf("%.2f", value) }
   }) %>
