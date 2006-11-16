@@ -1,3 +1,25 @@
 == Welcome to ActiveWarehouse Demo
 
 This is a demo for the ActiveWarehouse plugin.
+
+1.) To get started you must first install the ActiveWarehouse plugin:
+
+  script/plugin install svn://rubyforge.org/var/svn/activewarehouse/timer/trunk
+
+2.) Create the database. For example, connect to your MySQL server and type:
+
+  create database aw_development;
+  
+3.) Run the migration script:
+
+  rake migrate
+  
+4.) Run the setup script:
+  
+  ruby db/setup.rb
+  
+5.) Start the server:
+
+  script/server
+  
+6.) Go to http://localhost:3000/
