@@ -4,6 +4,10 @@ class DemoController < ApplicationController
     render :action => "demo/index", :layout => "application"
   end
   
+  def simple_example
+    
+  end
+  
   def example1
     
   end
