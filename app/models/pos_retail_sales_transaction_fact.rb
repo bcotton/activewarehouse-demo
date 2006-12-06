@@ -7,4 +7,6 @@ class PosRetailSalesTransactionFact < ActiveWarehouse::Fact
   
   belongs_to :date, :foreign_key => 'date_id', :class_name => 'DateDimension'
   belongs_to :store, :foreign_key => 'store_id', :class_name => 'StoreDimension'
+  belongs_to :product, :foreign_key => 'product_id', :class_name => 'ProductionDimension'
+  belongs_to :promotion, :foreign_key => 'promotion_id', :class_name => 'PromotionDimension'
 end
