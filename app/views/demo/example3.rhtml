@@ -3,16 +3,4 @@
   <%= link_to 'Top of Report', :action => 'example3'%>
 </p>
 
-<%= render_cube(:product_sales, :date, :product,
-  :column => {
-    :hierarchy => :cy
-  },
-  :row => { 
-    :hierarchy => :product
-  },
-  :html_options => {
-    :report_class => 'report'
-  }, 
-  :format => {
-    :gross_margin => Proc.new {|value| sprintf("%.2f", value) }
-  }) %>
+<%= render_report(@report, :report_class => 'report') %>
