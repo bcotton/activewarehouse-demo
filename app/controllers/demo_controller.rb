@@ -78,18 +78,13 @@ class DemoController < ApplicationController
       @row_hierarchy = row_pivot[:hierarchy]
     end
     
-    puts "@col_dimension=#{@col_dimension}"
-    puts "@col_hierarchy=#{@col_hierarchy}"
-    puts "@row_dimension=#{@row_dimension}"
-    puts "@row_hierarchy=#{@row_hierarchy}"
-    
     params[:cd] = @col_dimension = @col_dimension.to_sym
     params[:ch] = @col_hierarchy = @col_hierarchy.to_sym
     params[:rd] = @row_dimension = @row_dimension.to_sym
     params[:rh] = @row_hierarchy = @row_hierarchy.to_sym
     
     @report = ActiveWarehouse::Report::TableReport.new(
-      :title => "Example 3",
+      :title => "Example 4",
       :cube_name => :product_sales,
       :column_dimension_name => @col_dimension,
       :column_hierarchy => @col_hierarchy,
