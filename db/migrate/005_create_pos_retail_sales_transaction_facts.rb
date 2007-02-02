@@ -5,7 +5,7 @@ class CreatePosRetailSalesTransactionFacts < ActiveRecord::Migration
       t.column :product_id, :integer
       t.column :store_id, :integer
       t.column :promotion_id, :integer
-      t.column :pos_transaction_number, :string
+      t.column :pos_transaction_number, :string, :limit => 30
       t.column :sales_quantity, :integer
       t.column :sales_dollar_amount, :double
       t.column :cost_dollar_amount, :double
