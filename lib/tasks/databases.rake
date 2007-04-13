@@ -6,3 +6,8 @@ namespace :db do
     ActiveRecord::Base.connection.recreate_database(ActiveRecord::Base.connection.current_database)
   end
 end
+
+task :setup => :environment do
+  require File.dirname(__FILE__) + '/../../db/setup'
+end
+  

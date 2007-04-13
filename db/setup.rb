@@ -5,7 +5,7 @@ $:.unshift(File.dirname(__FILE__))
 require File.dirname(__FILE__) + '/../config/environment'
 
 # Copied from rake task
-ddb = ActiveWarehouse::Builder::DateDimensionBuilder.new(Time.now.years_ago(5), Time.now) # TODO: start and end dates should be configurable?
+ddb = ActiveWarehouse::Builder::DateDimensionBuilder.new(Date.new(2001, 1, 1), Date.new(2007, 1, 1))
 ddb.build.each do |record|
   dd = DateDimension.new
   record.each do |key,value|
@@ -15,4 +15,5 @@ ddb.build.each do |record|
 end
 
 require 'setup/store'
+require 'setup/product'
 require 'setup/pos_retail_sales_transaction'

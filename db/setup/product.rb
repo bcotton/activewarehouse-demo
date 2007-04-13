@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-require File.dirname(__FILE__) + '/../../config/environment'
-
 products = [
   ['Crunchy Chips', '00399494302', 'Delicious Brands', 'Snack Foods', 'Snack Foods', 'Bag', 'Small', 'Regular Fat', 24, 'Ounces', 'Non Refrigerated', '3 Years', 6, 12, 3],
   ['Low Fat Crunchy Chips', '00399494303', 'Delicious Brands', 'Snack Foods', 'Snack Foods', 'Bag', 'Small', 'Low Fat', 24, 'Ounces', 'Non Refrigerated', '3 Years', 6, 12, 3],
@@ -15,23 +13,14 @@ products = [
 connection = ProductDimension.connection
 connection.execute("TRUNCATE TABLE #{ProductDimension.table_name}")
 
+order = [
+  :product_description, :sku_number, :brand_description, :category_description, :department_description,
+  :package_type_description, :package_size, :fat_content, :diet_type, :weight, :weight_units_of_measure,
+  :storage_type, :shelf_life_type, :shelf_width, :shelf_height, :shelf_depth
+]
+
 products.each do |product|
-  ProductDimension.create(
-    :product_description => product[0],
-    :sku_number => product[1],
-    :brand_description => product[2],
-    :category_description => product[3],
-    :department_description => product[4],
-    :package_type_description => product[5],
-    :package_size => product[6],
-    :fat_content => product[7],
-    :diet_type => product[8],
-    :weight => product[9],
-    :weight_units_of_measure => product[10],
-    :storage_type => product[11],
-    :shelf_life_type => product[12],
-    :shelf_width => product[13],
-    :shelf_height => product[14],
-    :shelf_depth => product[15]
-  )
+  attributes = {}
+  order.each_with_index { |field, index| attributes[field] = product[index] }
+  ProductDimension.create(attributes)
 end

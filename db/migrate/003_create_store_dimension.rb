@@ -7,6 +7,7 @@ class CreateStoreDimension < ActiveRecord::Migration
       :store_city => {:type => :string, :limit => 20},
       :store_county => {:type => :string, :limit => 20},
       :store_state => {:type => :string, :limit => 2},
+      :store_state_name => {:type => :string, :limit => 40},
       :store_zip_code => {:type => :string, :limit => 10},
       :store_manager => {:type => :string, :limit => 30},
       :store_district => {:type => :string, :limit => 20},
