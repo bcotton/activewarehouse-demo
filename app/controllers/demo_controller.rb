@@ -90,7 +90,6 @@ class DemoController < ApplicationController
       :column_hierarchy => @col_hierarchy,
       :row_dimension_name => @row_dimension,
       :row_hierarchy => @row_hierarchy,
-      :fact_attributes => [:sales_quantity],
       :format => {:gross_margin => Proc.new {|value| sprintf("%.2f", value) }}
     )
   end
