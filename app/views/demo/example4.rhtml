@@ -1,7 +1,7 @@
 <div style="float:right;">
-  <%= form_tag %>
+  <% form_tag '/demo/example4' do -%>
   <div>Column: <%= select_tag :col_pivot, options_for_select(@pivots.collect {|pivot| [pivot[:name], pivot[:index]] }) %> Row: <%= select_tag :row_pivot, options_for_select(@pivots.collect {|pivot| [pivot[:name], pivot[:index]] }) %> <%= submit_tag 'Refresh' %></div>
-  <%= end_form_tag %>
+  <% end -%>
 </div>
 
 <p>
@@ -9,4 +9,4 @@
   <%= link_to 'Top of Report', :action => 'example4'%>
 </p>
 
-<%= render_report(@report, :report_class => 'report') %>
+<%= render_report_from(@view, :report_class => 'report') %>

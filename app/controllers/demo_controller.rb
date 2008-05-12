@@ -5,16 +5,16 @@ class DemoController < ApplicationController
   end
   
   def simple_example
-    @report = ActiveWarehouse::Report::TableReport.new(
+    @view = ActiveWarehouse::Report::TableReport.new(
       :title => "Simple Report",
       :cube_name => :regional_sales,
       :column_dimension_name => :date,
       :row_dimension_name => :store
-    )
+    ).view(params)
   end
   
   def example1
-    @report = ActiveWarehouse::Report::TableReport.new(
+    @view = ActiveWarehouse::Report::TableReport.new(
       :title => "Example 1",
       :cube_name => :regional_sales,
       :column_dimension_name => :date,
@@ -25,10 +25,10 @@ class DemoController < ApplicationController
       :row_dimension_name => :store,
       :row_hierarchy => :region,
       :format => {:gross_margin => Proc.new {|value| sprintf("%.2f", value) }}
-    )
+    ).view(params)
   end
   def example2
-    @report = ActiveWarehouse::Report::TableReport.new(
+    @view = ActiveWarehouse::Report::TableReport.new(
       :title => "Example 2",
       :cube_name => :regional_sales,
       :column_dimension_name => :date,
@@ -36,10 +36,10 @@ class DemoController < ApplicationController
       :row_dimension_name => :store,
       :row_hierarchy => :location,
       :format => {:gross_margin => Proc.new {|value| sprintf("%.2f", value) }}
-    )
+    ).view(params)
   end
   def example3
-    @report = ActiveWarehouse::Report::TableReport.new(
+    @view = ActiveWarehouse::Report::TableReport.new(
       :title => "Example 3",
       :cube_name => :product_sales,
       :column_dimension_name => :date,
@@ -47,7 +47,7 @@ class DemoController < ApplicationController
       :row_dimension_name => :product,
       :row_hierarchy => :product,
       :format => {:gross_margin => Proc.new {|value| sprintf("%.2f", value) }}
-    )
+    ).view(params)
   end
   def example4
     # TODO: this is ugly as sin right now. I need to clean it up and put it into a helper
@@ -83,7 +83,7 @@ class DemoController < ApplicationController
     params[:rd] = @row_dimension = @row_dimension.to_sym
     params[:rh] = @row_hierarchy = @row_hierarchy.to_sym
     
-    @report = ActiveWarehouse::Report::TableReport.new(
+    @view = ActiveWarehouse::Report::TableReport.new(
       :title => "Example 4",
       :cube_name => :product_sales,
       :column_dimension_name => @col_dimension,
@@ -91,7 +91,7 @@ class DemoController < ApplicationController
       :row_dimension_name => @row_dimension,
       :row_hierarchy => @row_hierarchy,
       :format => {:gross_margin => Proc.new {|value| sprintf("%.2f", value) }}
-    )
+    ).view(params)
   end
   
   def fact_list
