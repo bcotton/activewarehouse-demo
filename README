@@ -6,6 +6,7 @@ This is a demo for the ActiveWarehouse plugin.
 
   script/plugin install svn://rubyforge.org/var/svn/activewarehouse/timer/trunk
   script/plugin install svn://rubyforge.org/var/svn/activewarehouse/activewarehouse/trunk
+  script/plugin install svn://errtheblog.com/svn/plugins/will_paginate
 
 2.) Create the database. For example, connect to your MySQL server and type:
 

@@ -99,6 +99,6 @@ class DemoController < ApplicationController
       :all, :include => [:date, :store])
   end
   def date_dimension
-    @dimension_pages, @dimension_records = paginate(:date_dimension, :per_page => 30)
+    @dimension_pages = DateDimension.paginate(:page => params[:page], :per_page => 30)
   end
 end
